@@ -32,17 +32,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      // 1. Force reload storage data before checking
-      // Yeh line ensure karegi ke agar storage.ts ne naya data dala hai toh wo mil jaye
+      // Force reload storage data before checking
       const allUsers = getUsers();
 
-      console.log("Current Users in Storage:", allUsers); // Debugging ke liye
+      console.log("Current Users in Storage:", allUsers); // Debugging
 
-      // 2. Case-insensitive email check
+      // Case-insensitive email check + password match
       const foundUser = allUsers.find(
         (u: User) =>
           u.email.toLowerCase() === email.toLowerCase() &&
-          String(u.password) === String(password), // String conversion for safety
+          String(u.password) === String(password),
       );
 
       if (foundUser) {

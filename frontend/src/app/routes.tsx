@@ -1,4 +1,6 @@
-import { createBrowserRouter, Navigate } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+
+// Admin Imports
 import Login from "./pages/Login";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminDashboard from "./pages/admin/Dashboard";
@@ -9,23 +11,38 @@ import HRModule from "./pages/admin/HRModule";
 import PayrollModule from "./pages/admin/PayrollModule";
 import OvertimeManagement from "./pages/admin/OvertimeManagement";
 import LiveCCTVTracking from "./pages/admin/LiveCCTVTracking";
-import Reports from "./pages/admin/Reports"; // Dashboard analytics page
+import Reports from "./pages/admin/Reports";
 import LeaveManagement from "./pages/admin/LeaveManagement";
-
-// --- Naye Modules ke Imports ---
 import SalaryConfig from "./pages/admin/SalaryConfig";
 
+// Staff Imports
 import StaffLayout from "./pages/staff/StaffLayout";
 import StaffDashboard from "./pages/staff/Dashboard";
 import StaffProfile from "./pages/staff/Profile";
-
-// --- Staff ke naye pages yahan import karein ---
 import LeaveRequest from "./pages/staff/LeaveRequest";
-import StaffOvertime from "./pages/staff/OvertimeManagement"; // Naam change kiya taake Admin wale se clash na ho
+import StaffOvertime from "./pages/staff/OvertimeManagement";
+
+// HR Imports
+import HRLayout from "./pages/hr/HRlayout";
+import HRDashboard from "./pages/hr/Dashboard";
+import HREmployees from "./pages/hr/HREmployees";
+import HRLeaveManagement from "./pages/hr/HRLeaveManagement";
+import HrOvertimeManagement from "./pages/hr/OvertimeManagement";
+import StaffVerifications from "./pages/hr/StaffVerifications";
+
+// HR New Imports
+import LiveAttendanceMarkerHR from "./pages/hr/LiveAttendanceMarker";
+import HRAttendanceView from "./pages/hr/HRAttendanceView";
+import HRSalaryConfig from "./pages/hr/SalaryConfig";
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★ HR Payroll Import (Naya Added) ★★★★★
+import HRPayrollModule from "./pages/hr/PayrollModule"; // ← Yeh important hai
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
 import { useAuth } from "./contexts/AuthContext";
 
-// --- Protected Route Wrapper ---
+// Protected Route
 const ProtectedRoute = ({
   children,
   allowedRoles,
@@ -35,17 +52,14 @@ const ProtectedRoute = ({
 }) => {
   const { user, isAuthenticated, isLoading } = useAuth();
 
-  if (isLoading) {
+  if (isLoading)
     return (
       <div className="flex h-screen items-center justify-center">
         Loading...
       </div>
     );
-  }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
+  if (!isAuthenticated) return <Navigate to="/" replace />;
 
   if (user && !allowedRoles.includes(user.role)) {
     return (
@@ -57,10 +71,9 @@ const ProtectedRoute = ({
 };
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
+  { path: "/", element: <Login /> },
+
+  // Admin Routes
   {
     path: "/admin",
     element: (
@@ -82,6 +95,36 @@ export const router = createBrowserRouter([
       { path: "leave-requests", element: <LeaveManagement /> },
     ],
   },
+
+  // HR Routes
+  {
+    path: "/hr",
+    element: (
+      <ProtectedRoute allowedRoles={["hr"]}>
+        <HRLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { index: true, element: <HRDashboard /> },
+      { path: "employees", element: <HREmployees /> },
+      { path: "leave-requests", element: <HRLeaveManagement /> },
+      { path: "overtime", element: <HrOvertimeManagement /> },
+      { path: "verifications", element: <StaffVerifications /> },
+      { path: "live-attendance", element: <LiveAttendanceMarkerHR /> },
+      { path: "attendance", element: <HRAttendanceView /> },
+      // HR Routes ke children array mein (sabse neeche best rahega)
+      { path: "salary-config", element: <HRSalaryConfig /> },
+
+      // ====================== PAYROLL MANAGEMENT (HR) ======================
+      {
+        path: "payroll",
+        element: <HRPayrollModule />,
+      },
+      // =====================================================================
+    ],
+  },
+
+  // Staff Routes
   {
     path: "/staff",
     element: (
@@ -102,7 +145,6 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <StaffDashboard /> },
       { path: "profile", element: <StaffProfile /> },
-      // --- Staff ke liye naye Routes ---
       { path: "leave", element: <LeaveRequest /> },
       { path: "overtime", element: <StaffOvertime /> },
     ],

@@ -1,12 +1,7 @@
-import {
-  User,
-  Staff,
-  AttendanceRecord,
-  OvertimeRequest, // BaseOvertimeRequest ki jagah direct OvertimeRequest use karein
-} from "../types";
+import { User, Staff, AttendanceRecord, OvertimeRequest } from "../types";
 
 // Version update taake purana incomplete data clear ho jaye aur naye fields apply hon
-const DATA_VERSION = "v15_final_task_fix";
+const DATA_VERSION = "v16_hr_role_added";
 
 // --- Base Getters & Setters ---
 export const getUsers = (): User[] =>
@@ -24,11 +19,7 @@ export const getAttendance = (): AttendanceRecord[] =>
 export const saveAttendance = (att: AttendanceRecord[]) =>
   localStorage.setItem("attendance", JSON.stringify(att));
 
-/** * NOTE: LeaveRequest aur OvertimeRequest ke interfaces yahan se hata diye gaye hain
- * kyunki wo types.ts se import ho rahe hain. Duplicate hone se white screen aati hai.
- */
-
-// --- NEW: Leave & Overtime Storage Logic ---
+// --- Leave & Overtime Storage Logic ---
 export const getLeaveRequests = (): any[] =>
   JSON.parse(localStorage.getItem("leave_requests") || "[]");
 
@@ -41,7 +32,7 @@ export const getOvertimeRequests = (): OvertimeRequest[] =>
 export const saveOvertimeRequests = (requests: OvertimeRequest[]) =>
   localStorage.setItem("overtime_requests", JSON.stringify(requests));
 
-// --- NEW: Leave & Overtime Actions ---
+// --- Leave & Overtime Actions ---
 export const addLeaveRequest = (req: any) => {
   const all = getLeaveRequests();
   all.push(req);
@@ -332,6 +323,14 @@ const initializeDefaultData = () => {
         email: "admin@company.com",
         password: "123",
         role: "admin",
+      },
+      // HR User Added
+      {
+        id: "hr-1",
+        name: "Hooria HR",
+        email: "hr@company.com",
+        password: "hr123",
+        role: "hr",
       },
       ...defaultStaff.map((s) => ({
         id: s.userId!,

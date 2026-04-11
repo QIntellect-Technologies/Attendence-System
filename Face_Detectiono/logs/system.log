@@ -1,0 +1,615 @@
+2026-03-28 13:10:36,382 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:10:36,382 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:10:39,004 | INFO     | [face_engine.py:20] | [INIT] Models loaded successfully. FaceEngine is ready!
+
+2026-03-28 13:10:39,004 | INFO     | [app.py:397] | 
+============================================================
+2026-03-28 13:10:39,004 | INFO     | [app.py:398] | 🚀 PRODUCTION SERVER ACTIVE (Waitress WSGI)
+2026-03-28 13:10:39,004 | INFO     | [app.py:399] | Open your browser and copy/paste: http://127.0.0.1:5000
+2026-03-28 13:10:39,004 | INFO     | [app.py:400] | ============================================================
+
+2026-03-28 13:10:39,041 | INFO     | [wasyncore.py:449] | Serving on http://0.0.0.0:5000
+2026-03-28 13:10:51,623 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:10:51,623 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:10:53,632 | INFO     | [face_engine.py:20] | [INIT] Models loaded successfully. FaceEngine is ready!
+
+2026-03-28 13:10:53,636 | INFO     | [app.py:397] | 
+============================================================
+2026-03-28 13:10:53,643 | INFO     | [app.py:399] | Open your browser and copy/paste: http://127.0.0.1:5000
+2026-03-28 13:10:53,643 | INFO     | [app.py:400] | ============================================================
+
+2026-03-28 13:10:53,680 | INFO     | [wasyncore.py:449] | Serving on http://0.0.0.0:5000
+2026-03-28 13:14:04,403 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:14:04,403 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:14:08,832 | INFO     | [face_engine.py:20] | [INIT] Models loaded successfully. FaceEngine is ready!
+
+2026-03-28 13:14:08,839 | INFO     | [app.py:430] | 
+============================================================
+2026-03-28 13:14:08,839 | INFO     | [app.py:431] | 🚀 PRODUCTION SERVER ACTIVE (Waitress WSGI)
+2026-03-28 13:14:08,839 | INFO     | [app.py:432] | Open your browser and copy/paste: http://127.0.0.1:5000
+2026-03-28 13:14:08,839 | INFO     | [app.py:433] | ============================================================
+
+2026-03-28 13:14:08,879 | INFO     | [wasyncore.py:449] | Serving on http://0.0.0.0:5000
+2026-03-28 13:16:37,386 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:16:37,387 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:18:31,455 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:18:31,457 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:18:34,041 | INFO     | [face_engine.py:20] | [INIT] Models loaded successfully. FaceEngine is ready!
+
+2026-03-28 13:18:34,046 | INFO     | [app.py:430] | 
+============================================================
+2026-03-28 13:18:34,047 | INFO     | [app.py:431] | 🚀 PRODUCTION SERVER ACTIVE (Waitress WSGI)
+2026-03-28 13:18:34,047 | INFO     | [app.py:432] | Open your browser and copy/paste: http://127.0.0.1:5000
+2026-03-28 13:18:34,047 | INFO     | [app.py:433] | ============================================================
+
+2026-03-28 13:18:34,082 | INFO     | [wasyncore.py:449] | Serving on http://0.0.0.0:5000
+2026-03-28 13:19:25,475 | INFO     | [app.py:277] | 
+[CAMERA] Booting Multithreaded High-Speed Stream: rtsp://admin:admin1122@192.168.0.199:554/Streaming/Channels/301
+2026-03-28 13:19:26,462 | INFO     | [app.py:285] | [CAMERA] Locked into Hikvision Stream at real-time speeds.
+2026-03-28 13:21:24,174 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:21:24,174 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:21:27,106 | INFO     | [face_engine.py:20] | [INIT] Models loaded successfully. FaceEngine is ready!
+
+2026-03-28 13:21:27,110 | INFO     | [app.py:400] | 
+============================================================
+2026-03-28 13:21:27,111 | INFO     | [app.py:401] | 🚀 PRODUCTION SERVER ACTIVE (Waitress WSGI)
+2026-03-28 13:21:27,111 | INFO     | [app.py:402] | Open your browser and copy/paste: http://127.0.0.1:5000
+2026-03-28 13:21:27,111 | INFO     | [app.py:403] | ============================================================
+
+2026-03-28 13:21:27,154 | INFO     | [wasyncore.py:449] | Serving on http://0.0.0.0:5000
+2026-03-28 13:25:25,836 | INFO     | [app.py:31] | 
+[HTTP API] Booting up Face Recognition Engine on GPU...
+2026-03-28 13:25:25,836 | INFO     | [face_engine.py:14] | 
+[INIT] Starting FaceEngine initialization...
+2026-03-28 13:25:27,797 | INFO     | [face_engine.py:20] | [INIT] Models loaded successfully. FaceEngine is ready!
+
+2026-03-28 13:25:27,801 | INFO     | [app.py:400] | 
+============================================================
+2026-03-28 13:25:27,802 | INFO     | [app.py:401] | 🚀 PRODUCTION SERVER ACTIVE (Waitress WSGI)
+2026-03-28 13:25:27,802 | INFO     | [app.py:402] | Open your browser and copy/paste: http://127.0.0.1:5000
+2026-03-28 13:25:27,802 | INFO     | [app.py:403] | ============================================================
+
+2026-03-28 13:25:27,833 | INFO     | [wasyncore.py:449] | Serving on http://0.0.0.0:5000
+2026-03-28 13:25:42,086 | INFO     | [app.py:247] | 
+[CAMERA] Booting Multithreaded High-Speed Stream: rtsp://admin:admin1122@192.168.0.199:554/Streaming/Channels/301
+2026-03-28 13:25:43,040 | INFO     | [app.py:255] | [CAMERA] Locked into Hikvision Stream at real-time speeds.
+2026-03-28 13:25:56,321 | INFO     | [app.py:180] | 
+[HTTP POST] Incoming enrollment request...
+2026-03-28 13:25:56,366 | INFO     | [app.py:191] | [HTTP POST] Payload received: Imran Khalid (UID-1) - 0001
+2026-03-28 13:25:56,404 | INFO     | [app.py:195] | [HTTP POST] Video safely saved to disk at: uploads\Imran_Khalid_Intro.mp4
+2026-03-28 13:25:56,404 | INFO     | [face_engine.py:48] | 
+==================================================
+2026-03-28 13:25:56,406 | INFO     | [face_engine.py:49] | [PROCESS] Starting video enrollment for Employee ID: UID-1
+2026-03-28 13:25:56,406 | INFO     | [face_engine.py:50] | [PROCESS] File path: uploads\Imran_Khalid_Intro.mp4
+2026-03-28 13:25:56,406 | INFO     | [face_engine.py:55] | [PROCESS] Created facial databank directory: app_data\extracted_faces\UID-1
+2026-03-28 13:25:56,465 | INFO     | [face_engine.py:62] | [PROCESS] Engine detected 1232 total frames in the video.
+2026-03-28 13:25:56,583 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 10/1232...
+2026-03-28 13:25:57,746 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:25:59,162 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:00,312 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:00,438 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 20/1232...
+2026-03-28 13:26:01,650 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:02,783 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:03,847 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:03,974 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 30/1232...
+2026-03-28 13:26:05,038 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:06,126 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:07,264 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:07,368 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 40/1232...
+2026-03-28 13:26:08,469 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:09,734 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:10,979 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:11,103 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 50/1232...
+2026-03-28 13:26:12,423 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:13,601 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:14,981 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:15,071 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 60/1232...
+2026-03-28 13:26:16,273 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:17,588 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:18,912 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:19,028 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 70/1232...
+2026-03-28 13:26:20,170 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:21,570 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:22,688 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:22,799 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 80/1232...
+2026-03-28 13:26:24,021 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:25,295 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:26,576 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:26,659 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 90/1232...
+2026-03-28 13:26:27,765 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:28,939 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:30,198 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:30,269 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 100/1232...
+2026-03-28 13:26:31,682 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:33,176 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:34,384 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:34,475 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 110/1232...
+2026-03-28 13:26:35,702 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:36,853 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:37,975 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:38,052 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 120/1232...
+2026-03-28 13:26:39,169 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:40,352 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:41,569 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:41,649 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 130/1232...
+2026-03-28 13:26:42,742 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:43,963 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:45,065 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:45,152 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 140/1232...
+2026-03-28 13:26:46,280 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:47,450 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:48,756 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:48,823 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 150/1232...
+2026-03-28 13:26:49,982 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:51,239 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:52,471 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:52,554 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 160/1232...
+2026-03-28 13:26:53,795 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:54,965 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:56,132 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:56,207 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 170/1232...
+2026-03-28 13:26:57,339 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:26:58,470 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:26:59,643 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:26:59,732 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 180/1232...
+2026-03-28 13:27:00,877 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:02,007 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:03,169 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:03,249 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 190/1232...
+2026-03-28 13:27:04,334 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:05,623 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:06,817 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:06,905 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 200/1232...
+2026-03-28 13:27:08,009 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:09,259 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:10,427 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:10,515 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 210/1232...
+2026-03-28 13:27:11,710 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:12,827 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:13,973 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:14,063 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 220/1232...
+2026-03-28 13:27:15,179 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:16,368 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:17,448 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:17,582 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 230/1232...
+2026-03-28 13:27:18,788 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:19,947 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:21,147 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:21,238 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 240/1232...
+2026-03-28 13:27:22,370 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:23,616 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:24,841 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:24,931 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 250/1232...
+2026-03-28 13:27:26,196 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:27,429 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:28,729 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:28,819 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 260/1232...
+2026-03-28 13:27:30,080 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:31,456 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:33,026 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:33,164 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 270/1232...
+2026-03-28 13:27:34,346 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:35,549 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:36,946 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:37,055 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 280/1232...
+2026-03-28 13:27:38,340 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:39,601 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:40,784 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:40,879 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 290/1232...
+2026-03-28 13:27:41,985 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:43,158 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:44,249 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:44,347 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 300/1232...
+2026-03-28 13:27:45,484 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:46,571 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:47,567 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:47,670 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 310/1232...
+2026-03-28 13:27:48,741 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:49,831 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:50,941 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:51,079 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 320/1232...
+2026-03-28 13:27:52,111 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:53,242 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:54,227 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:54,345 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 330/1232...
+2026-03-28 13:27:55,430 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:56,582 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:27:57,676 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:27:57,797 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 340/1232...
+2026-03-28 13:27:58,913 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:27:59,969 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:00,994 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:01,102 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 350/1232...
+2026-03-28 13:28:02,348 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:03,413 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:04,514 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:04,586 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 360/1232...
+2026-03-28 13:28:05,715 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:06,792 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:07,873 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:07,992 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 370/1232...
+2026-03-28 13:28:09,009 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:10,102 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:11,360 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:11,489 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 380/1232...
+2026-03-28 13:28:12,472 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:13,576 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:14,678 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:14,794 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 390/1232...
+2026-03-28 13:28:15,874 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:16,992 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:18,019 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:18,128 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 400/1232...
+2026-03-28 13:28:19,221 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:20,228 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:21,322 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:21,440 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 410/1232...
+2026-03-28 13:28:22,486 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:23,578 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:24,593 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:24,714 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 420/1232...
+2026-03-28 13:28:25,994 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:27,098 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:28,250 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:28,380 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 430/1232...
+2026-03-28 13:28:29,542 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:30,674 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:31,794 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:31,923 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 440/1232...
+2026-03-28 13:28:32,984 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:34,177 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:35,355 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:35,484 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 450/1232...
+2026-03-28 13:28:36,713 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:37,916 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:39,096 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:39,218 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 460/1232...
+2026-03-28 13:28:40,301 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:41,404 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:42,623 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:42,760 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 470/1232...
+2026-03-28 13:28:43,953 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:45,121 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:46,271 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:46,349 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 480/1232...
+2026-03-28 13:28:47,477 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:48,644 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:49,798 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:49,875 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 490/1232...
+2026-03-28 13:28:51,268 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:52,493 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:53,763 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:53,893 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 500/1232...
+2026-03-28 13:28:55,318 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:28:56,771 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:28:57,788 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:28:57,914 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 510/1232...
+2026-03-28 13:28:58,991 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:00,334 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:01,779 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:01,906 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 520/1232...
+2026-03-28 13:29:03,151 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:04,538 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:05,863 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:05,993 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 530/1232...
+2026-03-28 13:29:07,212 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:08,265 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:09,390 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:09,521 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 540/1232...
+2026-03-28 13:29:10,587 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:11,563 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:12,680 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:12,816 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 550/1232...
+2026-03-28 13:29:13,933 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:15,103 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:16,384 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:16,510 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 560/1232...
+2026-03-28 13:29:17,700 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:18,771 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:19,864 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:19,999 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 570/1232...
+2026-03-28 13:29:21,134 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:22,375 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:23,846 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:23,943 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 580/1232...
+2026-03-28 13:29:25,302 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:26,629 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:27,830 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:27,949 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 590/1232...
+2026-03-28 13:29:29,175 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:30,472 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:31,751 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:31,827 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 600/1232...
+2026-03-28 13:29:32,978 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:34,134 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:35,325 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:35,408 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 610/1232...
+2026-03-28 13:29:36,548 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:37,725 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:38,864 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:38,945 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 620/1232...
+2026-03-28 13:29:40,116 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:41,404 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:42,603 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:42,697 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 630/1232...
+2026-03-28 13:29:43,861 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:44,972 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:46,208 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:46,287 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 640/1232...
+2026-03-28 13:29:47,540 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:48,939 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:50,213 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:50,300 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 650/1232...
+2026-03-28 13:29:51,494 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:52,676 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:53,928 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:54,098 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 660/1232...
+2026-03-28 13:29:55,662 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:29:56,897 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:29:58,150 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:29:58,261 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 670/1232...
+2026-03-28 13:29:59,414 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:00,625 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:02,166 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:02,258 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 680/1232...
+2026-03-28 13:30:03,436 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:04,690 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:05,890 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:05,976 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 690/1232...
+2026-03-28 13:30:07,111 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:08,271 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:09,308 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:09,412 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 700/1232...
+2026-03-28 13:30:10,527 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:11,670 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:12,678 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:12,796 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 710/1232...
+2026-03-28 13:30:13,933 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:15,119 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:16,254 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:16,333 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 720/1232...
+2026-03-28 13:30:17,537 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:18,768 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:20,044 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:20,129 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 730/1232...
+2026-03-28 13:30:21,732 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:22,955 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:24,423 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:24,585 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 740/1232...
+2026-03-28 13:30:25,843 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:26,981 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:28,166 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:28,242 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 750/1232...
+2026-03-28 13:30:29,441 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:30,669 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:32,037 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:32,127 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 760/1232...
+2026-03-28 13:30:33,362 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:34,584 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:36,180 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:36,286 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 770/1232...
+2026-03-28 13:30:37,705 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:39,182 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:40,485 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:40,565 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 780/1232...
+2026-03-28 13:30:41,771 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:43,015 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:44,323 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:44,420 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 790/1232...
+2026-03-28 13:30:45,811 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:47,085 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:48,353 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:48,428 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 800/1232...
+2026-03-28 13:30:49,562 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:50,830 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:52,139 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:52,214 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 810/1232...
+2026-03-28 13:30:53,382 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:54,612 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:55,844 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:55,947 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 820/1232...
+2026-03-28 13:30:57,193 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:30:58,424 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:30:59,659 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:30:59,802 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 830/1232...
+2026-03-28 13:31:01,086 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:02,256 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:03,666 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:03,774 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 840/1232...
+2026-03-28 13:31:05,112 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:06,362 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:07,628 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:07,729 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 850/1232...
+2026-03-28 13:31:09,148 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:10,470 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:11,655 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:11,740 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 860/1232...
+2026-03-28 13:31:12,908 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:14,102 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:15,224 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:15,310 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 870/1232...
+2026-03-28 13:31:16,544 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:17,751 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:19,103 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:19,191 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 880/1232...
+2026-03-28 13:31:20,280 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:21,495 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:22,646 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:22,739 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 890/1232...
+2026-03-28 13:31:23,887 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:25,095 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:26,223 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:26,308 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 900/1232...
+2026-03-28 13:31:27,422 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:28,571 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:29,815 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:29,891 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 910/1232...
+2026-03-28 13:31:31,101 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:32,371 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:33,502 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:33,614 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 920/1232...
+2026-03-28 13:31:34,844 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:36,078 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:37,286 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:37,353 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 930/1232...
+2026-03-28 13:31:38,495 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:39,705 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:40,756 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:40,858 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 940/1232...
+2026-03-28 13:31:42,285 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:43,594 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:44,896 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:44,995 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 950/1232...
+2026-03-28 13:31:46,256 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:47,660 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:48,918 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:49,072 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 960/1232...
+2026-03-28 13:31:50,339 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:51,460 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:52,735 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:52,802 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 970/1232...
+2026-03-28 13:31:53,897 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:55,104 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:56,312 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:56,387 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 980/1232...
+2026-03-28 13:31:57,510 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:31:58,660 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:31:59,804 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:31:59,877 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 990/1232...
+2026-03-28 13:32:00,941 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:02,059 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:03,166 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:03,233 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1000/1232...
+2026-03-28 13:32:04,333 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:05,409 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:06,518 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:06,602 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1010/1232...
+2026-03-28 13:32:07,720 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:08,808 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:09,827 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:09,895 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1020/1232...
+2026-03-28 13:32:10,952 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:12,073 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:13,298 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:13,364 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1030/1232...
+2026-03-28 13:32:14,444 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:15,638 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:16,722 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:16,816 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1040/1232...
+2026-03-28 13:32:17,954 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:19,088 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:20,147 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:20,235 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1050/1232...
+2026-03-28 13:32:21,663 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:22,800 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:23,992 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:24,091 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1060/1232...
+2026-03-28 13:32:25,398 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:26,519 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:27,708 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:27,801 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1070/1232...
+2026-03-28 13:32:29,081 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:30,250 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:31,460 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:31,550 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1080/1232...
+2026-03-28 13:32:32,702 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:33,842 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:35,001 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:35,117 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1090/1232...
+2026-03-28 13:32:36,346 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:37,636 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:38,932 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:39,015 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1100/1232...
+2026-03-28 13:32:40,236 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:41,467 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:42,666 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:42,745 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1110/1232...
+2026-03-28 13:32:43,918 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:45,157 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:46,310 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:46,397 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1120/1232...
+2026-03-28 13:32:47,913 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:49,220 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:50,468 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:50,586 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1130/1232...
+2026-03-28 13:32:51,807 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:52,982 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:54,218 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:54,301 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1140/1232...
+2026-03-28 13:32:55,516 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:32:56,756 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:32:58,066 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:32:58,143 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1150/1232...
+2026-03-28 13:32:59,435 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:00,614 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:01,798 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:01,880 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1160/1232...
+2026-03-28 13:33:03,129 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:04,470 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:05,784 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:05,871 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1170/1232...
+2026-03-28 13:33:07,155 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:08,433 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:09,755 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:09,857 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1180/1232...
+2026-03-28 13:33:11,105 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:12,290 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:13,586 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:13,664 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1190/1232...
+2026-03-28 13:33:14,928 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:16,327 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:18,354 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:18,491 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1200/1232...
+2026-03-28 13:33:20,030 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:21,453 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:23,021 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:23,158 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1210/1232...
+2026-03-28 13:33:24,778 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:26,525 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:28,183 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:28,349 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1220/1232...
+2026-03-28 13:33:30,094 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:31,826 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:33,339 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:33,451 | INFO     | [face_engine.py:79] | [ENGINE] Deep Scanning frame 1230/1232...
+2026-03-28 13:33:35,369 | INFO     | [face_engine.py:106] |    [+] Face found & High-Quality Vector Saved! (Original)
+2026-03-28 13:33:37,005 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting BRIGHT Vector Synced.
+2026-03-28 13:33:38,777 | INFO     | [face_engine.py:108] |    [+] Virtual Lighting DARK Vector Synced.
+2026-03-28 13:33:38,818 | INFO     | [face_engine.py:115] | 
+[SUMMARY] Pipeline complete for UID-1:
+2026-03-28 13:33:38,819 | INFO     | [face_engine.py:116] |  -> Scanned 1232 total frames.
+2026-03-28 13:33:38,819 | INFO     | [face_engine.py:117] |  -> Successfully detected root face in 123 frames.
+2026-03-28 13:33:38,819 | INFO     | [face_engine.py:118] |  -> Generated 369 total enhanced data points (via Augmentation).
+2026-03-28 13:33:38,819 | INFO     | [face_engine.py:121] | [CALCULATING] Averaging 369 vector pairs to build 512-dimension mathematical core...
+2026-03-28 13:33:38,820 | INFO     | [face_engine.py:126] | [CALCULATING] Core normalized successfully. Ready for Database Injection.
+2026-03-28 13:33:38,820 | INFO     | [face_engine.py:127] | ==================================================
+
+2026-03-28 13:33:38,822 | INFO     | [app.py:201] | 
+[DATABASE] Connecting... Requesting insertion of ID:UID-1, Name:Imran Khalid
+2026-03-28 13:33:38,830 | INFO     | [app.py:204] | [CLEANUP] Video processing complete. Removing heavy file: uploads\Imran_Khalid_Intro.mp4
+2026-03-28 13:33:38,833 | INFO     | [app.py:207] | 
+[SUCCESS] Entire system updated. User is instantly recognizable.
+2026-03-28 13:34:51,158 | INFO     | [app.py:247] | 
+[CAMERA] Booting Multithreaded High-Speed Stream: rtsp://admin:admin1122@192.168.0.199:554/Streaming/Channels/301
+2026-03-28 13:34:51,311 | INFO     | [channel.py:434] | Client disconnected while serving /video_feed
+2026-03-28 13:34:52,132 | INFO     | [app.py:255] | [CAMERA] Locked into Hikvision Stream at real-time speeds.
+2026-03-28 13:37:46,530 | INFO     | [app.py:346] | 
+[ATTENDANCE LOGGED] Marked Imran Khalid (0.46) present at Sat Mar 28 13:37:46 2026
+2026-03-28 13:42:21,794 | INFO     | [app.py:247] | 
+[CAMERA] Booting Multithreaded High-Speed Stream: rtsp://admin:admin1122@192.168.0.199:554/Streaming/Channels/301
+2026-03-28 13:42:21,846 | INFO     | [channel.py:434] | Client disconnected while serving /video_feed
+2026-03-28 13:42:22,752 | INFO     | [app.py:255] | [CAMERA] Locked into Hikvision Stream at real-time speeds.
+2026-03-28 13:50:15,020 | INFO     | [app.py:346] | 
+[ATTENDANCE LOGGED] Marked Imran Khalid (0.39) present at Sat Mar 28 13:50:15 2026

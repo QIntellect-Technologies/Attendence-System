@@ -1,5 +1,6 @@
 export type UserRole =
   | "admin"
+  | "hr" // ← Yeh add kiya gaya hai
   | "staff"
   | "manager"
   | "developer"
@@ -31,9 +32,8 @@ export interface Staff {
   shift?: string;
   role?: string;
   image?: string;
-  // UPDATED: string se number kar diya hai taake HRModule ka error khatam ho jaye
   salary?: number;
-  presentDays?: number; // Optional: Present days calculation ke liye
+  presentDays?: number;
 }
 
 export interface OvertimeRequest {

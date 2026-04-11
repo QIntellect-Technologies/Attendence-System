@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import {
   Calendar,
@@ -16,6 +16,8 @@ import {
   Activity,
   BarChart3,
   Target,
+  Camera,
+  Video,
 } from "lucide-react";
 
 export default function StaffDashboard() {
@@ -26,7 +28,23 @@ export default function StaffDashboard() {
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState<any>(null);
 
-  // Live user data from backend (name, shift, role etc.)
+  // ==================== VIDEO VERIFICATION STATES ====================
+  const [showVideoPopup, setShowVideoPopup] = useState(true);
+  const [showRecorder, setShowRecorder] = useState(false);
+  const [showUploadOption, setShowUploadOption] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [videoRecorded, setVideoRecorded] = useState(false);
+  const [recordingTime, setRecordingTime] = useState(15);
+  const [videoBlob, setVideoBlob] = useState<Blob | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+
+  // Live user data
   const currentUserData = useMemo(() => {
     const name = dbProfile?.name || user?.name || "Staff Member";
     const role = dbProfile?.position || dbProfile?.role || "Team Member";
@@ -34,7 +52,6 @@ export default function StaffDashboard() {
       dbProfile?.shiftStart || dbProfile?.duty_start || "--:--";
     const shiftEnd = dbProfile?.shiftEnd || dbProfile?.duty_end || "--:--";
     const shiftCategory = dbProfile?.shift || "Not Assigned";
-
     return {
       name,
       role,
@@ -44,40 +61,32 @@ export default function StaffDashboard() {
     };
   }, [dbProfile, user]);
 
-  // Weekly stats (last 7 days)
+  // Weekly stats
   const weeklyStats = useMemo(() => {
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const last7Days = [];
     const today = new Date();
-
     for (let i = 6; i >= 0; i--) {
       const d = new Date(today);
       d.setDate(today.getDate() - i);
       const dateString = d.toISOString().split("T")[0];
       const dayName = days[d.getDay()];
-
       const record = allAttendance.find((r) => {
         const rDate = new Date(r.date).toISOString().split("T")[0];
         return rDate === dateString;
       });
-
       let hours = 0;
       if (record) {
-        if (record.hours !== undefined) {
-          hours = record.hours;
-        } else if (
-          record.workDuration &&
-          record.workDuration !== "In Progress"
-        ) {
+        if (record.hours !== undefined) hours = record.hours;
+        else if (record.workDuration && record.workDuration !== "In Progress") {
           const parts = record.workDuration.split(" ")[0].split(":");
           const h = parseInt(parts[0], 10) || 0;
           const m = parseInt(parts[1], 10) || 0;
           hours = h + m / 60;
         } else if (record.workDuration === "In Progress") {
-          hours = 4; // temporary for graph
+          hours = 4;
         }
       }
-
       last7Days.push({
         day: dayName,
         date: dateString,
@@ -96,42 +105,192 @@ export default function StaffDashboard() {
     attendanceRate: 0,
   });
 
-  const loadDashboardData = async () => {
-    const searchName = (user?.name || "").trim();
-    console.log("Searching for staff name:", searchName); // debug
+  // ==================== VIDEO RECORDING FUNCTIONS ====================
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isRecording && recordingTime > 0) {
+      timer = setTimeout(() => setRecordingTime((prev) => prev - 1), 1000);
+    } else if (isRecording && recordingTime === 0) {
+      stopRecording();
+    }
+    return () => clearTimeout(timer);
+  }, [isRecording, recordingTime]);
 
-    if (!searchName) {
-      console.warn("No staff name found in user object");
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: "user",
+          width: { ideal: 640 },
+          height: { ideal: 480 },
+        },
+        audio: false,
+      });
+      streamRef.current = stream;
+      if (videoRef.current) videoRef.current.srcObject = stream;
+      const mediaRecorder = new MediaRecorder(stream, {
+        mimeType: MediaRecorder.isTypeSupported("video/webm;codecs=vp9")
+          ? "video/webm;codecs=vp9"
+          : "video/webm",
+      });
+      mediaRecorderRef.current = mediaRecorder;
+      chunksRef.current = [];
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) chunksRef.current.push(e.data);
+      };
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: "video/webm" });
+        setVideoBlob(blob);
+        setVideoRecorded(true);
+        setIsRecording(false);
+        stream.getTracks().forEach((track) => track.stop());
+        streamRef.current = null;
+      };
+      mediaRecorder.start();
+      setIsRecording(true);
+      setRecordingTime(15);
+    } catch (err) {
+      alert("Camera access nahi mila. Permission allow karein.");
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current) mediaRecorderRef.current.stop();
+  };
+
+  // ==================== DIRECT FILE UPLOAD FUNCTION (Original - unchanged) ====================
+  const handleFileUpload = async () => {
+    if (!selectedFile) {
+      alert("Please select a video file first!");
       return;
     }
 
+    setIsUploading(true);
+
+    const formData = new FormData();
+    formData.append(
+      "video",
+      selectedFile,
+      `verification_${currentUserData.id || "unknown"}_${Date.now()}.${selectedFile.name.split(".").pop()}`,
+    );
+    formData.append("staffId", currentUserData.id || "");
+    formData.append("staffName", currentUserData.name || "");
+
     try {
-      // 1. Fetch live staff profile (includes shift info)
+      const res = await fetch(
+        "http://127.0.0.1:5000/api/staff/self-verification",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        alert(`✅ Verification successful!\nWelcome ${currentUserData.name}`);
+        setShowRecorder(false);
+        setShowVideoPopup(false);
+        setShowUploadOption(false);
+        setSelectedFile(null);
+        loadDashboardData();
+      } else {
+        alert(
+          "Upload failed: " +
+            (result.error || result.message || "Unknown error"),
+        );
+      }
+    } catch (err) {
+      console.error("Upload Error:", err);
+      alert("Network error - Backend se connect nahi ho raha.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  // ==================== NEW: RECORDED VIDEO UPLOAD FUNCTION ====================
+  const handleRecordedVideoUpload = async () => {
+    if (!videoBlob) {
+      alert("No video recorded! Please record again.");
+      return;
+    }
+
+    setIsUploading(true);
+
+    const formData = new FormData();
+    formData.append(
+      "video",
+      videoBlob,
+      `verification_${currentUserData.id || "unknown"}_${Date.now()}.webm`,
+    );
+    formData.append("staffId", currentUserData.id || "");
+    formData.append("staffName", currentUserData.name || "");
+    formData.append("verificationType", "recorded"); // Optional but helpful
+
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5000/api/staff/self-verification",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        alert(`✅ Verification successful!\nWelcome ${currentUserData.name}`);
+
+        // Reset everything
+        setShowRecorder(false);
+        setShowVideoPopup(false);
+        setVideoRecorded(false);
+        setVideoBlob(null);
+        loadDashboardData();
+      } else {
+        alert(
+          "Upload failed: " +
+            (result.error || result.message || "Unknown error"),
+        );
+      }
+    } catch (err) {
+      console.error("Recorded Video Upload Error:", err);
+      alert("Network error - Backend se connect nahi ho raha.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const resetRecording = () => {
+    setVideoRecorded(false);
+    setVideoBlob(null);
+    setIsRecording(false);
+  };
+
+  const closeAll = () => {
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach((track) => track.stop());
+    }
+    setShowRecorder(false);
+    setShowVideoPopup(false);
+    setShowUploadOption(false);
+    setSelectedFile(null);
+    setVideoRecorded(false);
+    setVideoBlob(null);
+  };
+
+  // ==================== EXISTING DASHBOARD FUNCTIONS ====================
+  const loadDashboardData = async () => {
+    const searchName = (user?.name || "").trim();
+    if (!searchName) return;
+    try {
       const staffRes = await fetch(
         `http://127.0.0.1:5000/get_staff_by_name?name=${encodeURIComponent(searchName)}`,
       );
-      console.log("Staff API status:", staffRes.status);
-
       if (staffRes.ok) {
         const profile = await staffRes.json();
-        console.log("Backend returned profile:", profile);
-
-        if (profile && !profile.error && profile.id) {
-          // better check
-          setDbProfile(profile);
-          console.log("Profile successfully set in state");
-        } else {
-          console.warn("Profile has error or invalid structure:", profile);
-        }
-      } else {
-        console.error(
-          "Staff fetch failed:",
-          staffRes.status,
-          await staffRes.text(),
-        );
+        if (profile && !profile.error && profile.id) setDbProfile(profile);
       }
-
-      // 2. Today's attendance
       const todayRes = await fetch(
         "http://127.0.0.1:5000/get_attendance_today",
       );
@@ -150,21 +309,17 @@ export default function StaffDashboard() {
           });
         }
       }
-
-      // 3. Full attendance history
       const historyRes = await fetch(
         `http://127.0.0.1:5000/get_attendance_by_name?name=${encodeURIComponent(searchName)}`,
       );
       if (historyRes.ok) {
         const historyData = await historyRes.json();
         setAllAttendance(historyData);
-
         const uniqueDates = new Set(historyData.map((r: any) => r.date));
         const presentDays = uniqueDates.size;
-        const totalDays = 22; // approx working days in month
+        const totalDays = 22;
         const rate =
           totalDays > 0 ? Math.round((presentDays / totalDays) * 100) : 0;
-
         setStats({
           presentDays,
           absentDays: Math.max(0, totalDays - presentDays),
@@ -179,26 +334,16 @@ export default function StaffDashboard() {
 
   useEffect(() => {
     loadDashboardData();
-    const interval = setInterval(loadDashboardData, 10000); // every 10s
+    const interval = setInterval(loadDashboardData, 10000);
     return () => clearInterval(interval);
   }, [user?.name]);
 
-  // Debug: log whenever dbProfile actually changes
-  useEffect(() => {
-    console.log("dbProfile state updated:", dbProfile);
-  }, [dbProfile]);
-
-  // Debug: log on every render
-  console.log("Component rendered. Current dbProfile:", dbProfile);
-  console.log("Current displayed data:", currentUserData);
-
   return (
     <div className="w-full min-h-screen bg-[#F8FAFC] p-4 lg:p-10 space-y-8 font-sans">
-      {/* Dynamic Welcome Header */}
+      {/* Dynamic Welcome Header - Same as before */}
       <div className="relative bg-slate-900 rounded-[3.5rem] p-10 lg:p-16 overflow-hidden shadow-2xl shadow-blue-900/20">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full -mr-20 -mt-20" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full -ml-10 -mb-10" />
-
         <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full">
@@ -231,7 +376,6 @@ export default function StaffDashboard() {
               </div>
             </div>
           </div>
-
           <div className="bg-white p-8 rounded-[3rem] shadow-2xl min-w-[200px] text-center rotate-3 hover:rotate-0 transition-transform duration-500">
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">
               Today
@@ -246,117 +390,7 @@ export default function StaffDashboard() {
         </div>
       </div>
 
-      {/* Main Insights Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div className="lg:col-span-8 bg-white rounded-[3rem] p-10 border border-slate-100 shadow-xl shadow-slate-200/50">
-          <div className="flex items-center justify-between mb-10">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-slate-900 rounded-2xl">
-                <Fingerprint className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-2xl font-black text-slate-900 italic uppercase">
-                Terminal Logs
-              </h2>
-            </div>
-            {todayAttendance && (
-              <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full border border-emerald-100">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-[10px] font-black text-emerald-700 uppercase tracking-widest">
-                  Duty On
-                </span>
-              </div>
-            )}
-          </div>
-
-          {todayAttendance ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <StatusRow
-                  label="Clock In"
-                  value={todayAttendance.inTime || "—"}
-                  icon={<Clock className="text-blue-500" />}
-                />
-                <StatusRow
-                  label="Clock Out"
-                  value={todayAttendance.outTime || "Pending"}
-                  icon={<LogOut className="text-rose-500" />}
-                />
-                <StatusRow
-                  label="Auth Type"
-                  value="Face Recognition"
-                  icon={<Award className="text-amber-500" />}
-                />
-              </div>
-              <div className="bg-slate-50 rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center border border-slate-100">
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
-                  Total Session Time
-                </p>
-                <div className="w-24 h-24 rounded-full border-4 border-blue-500 border-t-transparent animate-spin-slow mb-6 flex items-center justify-center">
-                  <Timer className="w-8 h-8 text-blue-600 animate-none" />
-                </div>
-                <h4 className="text-4xl font-black text-slate-900 italic leading-none">
-                  {todayAttendance.workDuration}
-                </h4>
-              </div>
-            </div>
-          ) : (
-            <div className="py-24 text-center bg-slate-50/50 rounded-[3rem] border-4 border-dashed border-slate-100">
-              <Activity className="w-16 h-16 text-slate-200 mx-auto mb-6 animate-pulse" />
-              <p className="text-slate-400 font-black uppercase tracking-widest text-sm italic">
-                Verification Required at Terminal
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Performance Metrics */}
-        <div className="lg:col-span-4 bg-blue-600 rounded-[3rem] p-10 text-white flex flex-col justify-between shadow-xl shadow-blue-200 relative overflow-hidden group">
-          <div className="relative z-10">
-            <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <BarChart3 className="w-7 h-7 text-white" />
-            </div>
-            <h4 className="text-4xl font-black italic uppercase mb-4 leading-tight">
-              Performance
-              <br />
-              Metrics
-            </h4>
-
-            <div className="space-y-4 mt-6">
-              <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                <span className="text-[10px] font-bold uppercase opacity-60 tracking-widest">
-                  Avg. Punctuality
-                </span>
-                <span className="text-sm font-black italic">94%</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                <span className="text-[10px] font-bold uppercase opacity-60 tracking-widest">
-                  Completion Rate
-                </span>
-                <span className="text-sm font-black italic">
-                  {stats.attendanceRate}%
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] font-bold uppercase opacity-60 tracking-widest">
-                  Shift Category
-                </span>
-                <span className="text-sm font-black italic">
-                  {currentUserData.shift}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <button
-            onClick={() => setIsAnalyticsOpen(true)}
-            className="relative z-10 w-full bg-white text-slate-900 font-black uppercase text-[11px] tracking-[0.2em] py-5 rounded-2xl hover:bg-slate-900 hover:text-white transition-all duration-300 flex items-center justify-center gap-3 shadow-xl mt-6"
-          >
-            View Full Data <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-
-      {/* Quick Stats Row */}
+      {/* Quick Stats Row - Same */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         <StatWidget
           title="Total Days"
@@ -384,121 +418,207 @@ export default function StaffDashboard() {
         />
       </div>
 
-      {/* Analytics Modal */}
-      {isAnalyticsOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 animate-in fade-in duration-300">
-          <div
-            className="absolute inset-0 bg-slate-900/90 backdrop-blur-xl"
-            onClick={() => setIsAnalyticsOpen(false)}
-          />
-          <div className="relative bg-white w-full max-w-5xl rounded-[4rem] p-12 overflow-y-auto max-h-[90vh] shadow-2xl">
-            <div className="flex justify-between items-center mb-12">
-              <div>
-                <h2 className="text-4xl font-black text-slate-900 italic uppercase">
-                  Efficiency Data
-                </h2>
-                <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-1">
-                  Real-time Performance analysis
-                </p>
-              </div>
-              <button
-                onClick={() => setIsAnalyticsOpen(false)}
-                className="p-4 bg-slate-100 rounded-2xl hover:bg-rose-50 hover:text-rose-600 transition-all"
+      {/* ===================== VERIFICATION POPUP ===================== */}
+      {showVideoPopup && (
+        <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
+          <div className="bg-slate-900 rounded-3xl p-10 max-w-sm w-full text-center border border-slate-700">
+            <div className="mx-auto w-20 h-20 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6">
+              <Video className="w-10 h-10 text-amber-500" />
+            </div>
+            <h2 className="text-3xl font-black text-white mb-3">
+              Verification Required
+            </h2>
+            <p className="text-slate-400 mb-8">
+              Security ke liye ek 15-second verification video record karna
+              zaroori hai
+            </p>
+
+            <button
+              onClick={() => {
+                setShowVideoPopup(false);
+                setShowRecorder(true);
+              }}
+              className="w-full bg-blue-600 hover:bg-blue-500 py-5 rounded-2xl font-semibold text-white text-lg transition-all"
+            >
+              Record Verification Video
+            </button>
+
+            <button
+              onClick={() => {
+                setShowVideoPopup(false);
+                setShowUploadOption(true);
+              }}
+              className="w-full mt-3 bg-slate-700 hover:bg-slate-600 py-5 rounded-2xl font-semibold text-white text-lg transition-all flex items-center justify-center gap-2"
+            >
+              <Video className="w-5 h-5" />
+              Upload Existing Video
+            </button>
+
+            <button
+              onClick={closeAll}
+              className="mt-6 text-slate-400 hover:text-white text-sm"
+            >
+              Skip for now (Not Recommended)
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===================== VIDEO RECORDER MODAL ===================== */}
+      {showRecorder && (
+        <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4">
+          <div className="bg-slate-900 rounded-3xl p-8 md:p-10 max-w-md w-full mx-auto border border-slate-700">
+            <div className="text-center mb-6">
+              <Camera className="w-10 h-10 text-amber-500 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-white">
+                Record 15 Second Video
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Face clearly visible rakhein
+              </p>
+            </div>
+            <div className="bg-black rounded-2xl overflow-hidden aspect-video mb-6 relative">
+              <video
+                ref={videoRef}
+                autoPlay
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              {isRecording && (
+                <div className="absolute top-4 right-4 bg-red-600 text-white text-xs px-3 py-1 rounded-full flex items-center gap-2">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  Recording • {recordingTime}s
+                </div>
+              )}
+              {videoRecorded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+                  <CheckCircle className="w-20 h-20 text-green-500" />
+                </div>
+              )}
+            </div>
+            <div className="text-xs text-slate-400 mb-6 space-y-1">
+              <p>• Arm length distance se record karein</p>
+              <p>• Poora face camera mein clearly dikhe</p>
+              <p>• Good lighting mein record karein</p>
+            </div>
+            <div className="flex flex-col gap-3">
+              {!isRecording && !videoRecorded && (
+                <button
+                  onClick={startRecording}
+                  className="w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-2xl font-semibold text-white"
+                >
+                  Start Recording
+                </button>
+              )}
+              {isRecording && (
+                <button
+                  onClick={stopRecording}
+                  className="w-full bg-red-600 hover:bg-red-500 py-4 rounded-2xl font-semibold text-white"
+                >
+                  Stop Recording
+                </button>
+              )}
+              {videoRecorded && (
+                <>
+                  <button
+                    onClick={handleRecordedVideoUpload}
+                    disabled={isUploading}
+                    className="w-full bg-green-600 hover:bg-green-500 py-4 rounded-2xl font-semibold text-white disabled:bg-slate-600 disabled:cursor-not-allowed transition-all"
+                  >
+                    {isUploading
+                      ? "Uploading Video..."
+                      : "✓ Upload & Continue to Dashboard"}
+                  </button>
+                  <button
+                    onClick={resetRecording}
+                    disabled={isUploading}
+                    className="w-full py-3 text-slate-400 hover:text-white"
+                  >
+                    Record Again
+                  </button>
+                </>
+              )}
+            </div>
+            <button
+              onClick={closeAll}
+              className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===================== UPLOAD EXISTING VIDEO MODAL ===================== */}
+      {showUploadOption && (
+        <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4">
+          <div className="bg-slate-900 rounded-3xl p-8 md:p-10 max-w-md w-full mx-auto border border-slate-700 relative">
+            <div className="text-center mb-6">
+              <Video className="w-10 h-10 text-amber-500 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-white">
+                Upload Verification Video
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Apni device se video select karein
+              </p>
+            </div>
+
+            <div className="border-2 border-dashed border-slate-700 rounded-2xl p-10 text-center mb-6 hover:border-blue-500 transition-colors">
+              <input
+                type="file"
+                accept="video/*"
+                onChange={(e) => {
+                  if (e.target.files && e.target.files[0]) {
+                    setSelectedFile(e.target.files[0]);
+                  }
+                }}
+                className="hidden"
+                id="video-upload"
+              />
+              <label
+                htmlFor="video-upload"
+                className="cursor-pointer flex flex-col items-center"
               >
-                <X />
+                <Video className="w-12 h-12 text-slate-400 mb-3" />
+                <p className="text-white font-medium">
+                  {selectedFile
+                    ? selectedFile.name
+                    : "Click to select video file"}
+                </p>
+                <p className="text-xs text-slate-500 mt-1">
+                  Supported: .webm, .mp4, .mov
+                </p>
+              </label>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={handleFileUpload}
+                disabled={!selectedFile || isUploading}
+                className="w-full bg-green-600 hover:bg-green-500 disabled:bg-slate-700 py-4 rounded-2xl font-semibold text-white disabled:cursor-not-allowed transition-all"
+              >
+                {isUploading ? "Uploading..." : "Upload Video & Verify"}
+              </button>
+
+              <button
+                onClick={() => {
+                  setShowUploadOption(false);
+                  setSelectedFile(null);
+                  setShowVideoPopup(true);
+                }}
+                className="w-full py-3 text-slate-400 hover:text-white"
+              >
+                Cancel
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                <Target className="text-blue-600 mb-4" />
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                  Monthly Goal
-                </p>
-                <h5 className="text-3xl font-black italic">
-                  {stats.presentDays}/{stats.totalDays} Days
-                </h5>
-              </div>
-              <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                <TrendingUp className="text-emerald-600 mb-4" />
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                  Performance
-                </p>
-                <h5 className="text-3xl font-black italic">
-                  {stats.attendanceRate > 85 ? "Excellent" : "Good"}
-                </h5>
-              </div>
-              <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                <Clock className="text-amber-600 mb-4" />
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                  Avg. Hours
-                </p>
-                <h5 className="text-3xl font-black italic">08:15 hrs</h5>
-              </div>
-            </div>
-
-            <h3 className="text-xl font-black uppercase italic mb-8">
-              Weekly Activity Graph
-            </h3>
-
-            <div className="flex items-end justify-between h-56 gap-4 mb-8 px-4">
-              {weeklyStats.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex-1 flex flex-col items-center gap-3 group cursor-pointer"
-                  onClick={() => setSelectedDay(item)}
-                >
-                  <div className="w-full bg-slate-50 rounded-2xl h-full relative overflow-hidden flex items-end border border-slate-100">
-                    <div
-                      className={`w-full transition-all duration-1000 ease-out group-hover:brightness-110 
-                        ${item.status === "full" ? "bg-blue-600" : item.status === "half" ? "bg-amber-400" : "bg-slate-200"}`}
-                      style={{
-                        height:
-                          item.hours > 0 ? `${(item.hours / 12) * 100}%` : "8%",
-                      }}
-                    />
-                    <div className="absolute inset-x-0 bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity flex justify-center">
-                      <span className="bg-slate-900 text-white text-[10px] px-2 py-1 rounded-lg font-black italic uppercase">
-                        {item.hours}h
-                      </span>
-                    </div>
-                  </div>
-                  <span
-                    className={`text-[10px] font-black uppercase ${item.date === new Date().toISOString().split("T")[0] ? "text-blue-600 underline decoration-2" : "text-slate-400"}`}
-                  >
-                    {item.day}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {selectedDay && selectedDay.fullRecord && (
-              <div className="mt-6 p-6 bg-blue-50 rounded-3xl border border-blue-100 animate-in slide-in-from-bottom-4">
-                <p className="text-[10px] font-black text-blue-400 uppercase mb-2">
-                  Details for {selectedDay.date}
-                </p>
-                <div className="flex gap-8">
-                  <div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase">
-                      In:
-                    </span>{" "}
-                    <span className="font-black italic">
-                      {selectedDay.fullRecord.time ||
-                        selectedDay.fullRecord.inTime ||
-                        "—"}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase">
-                      Duration:
-                    </span>{" "}
-                    <span className="font-black italic">
-                      {selectedDay.fullRecord.workDuration || "—"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
+            <button
+              onClick={closeAll}
+              className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl"
+            >
+              ✕
+            </button>
           </div>
         </div>
       )}
@@ -531,7 +651,6 @@ function StatWidget({ title, value, icon, theme }: any) {
     rose: "bg-rose-50 text-rose-600 border-rose-100 shadow-rose-100",
     amber: "bg-amber-50 text-amber-600 border-amber-100 shadow-amber-100",
   };
-
   return (
     <div className="p-8 rounded-[2.5rem] border-2 bg-white flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-2 duration-300">
       <div

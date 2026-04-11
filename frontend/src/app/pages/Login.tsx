@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import {
-  LogIn,
-  User,
-  Shield,
   AlertCircle,
   Mail,
   Lock,
@@ -12,7 +9,10 @@ import {
   Loader2,
   CheckCircle2,
   Fingerprint,
+  Shield,
+  User,
 } from "lucide-react";
+import { getUsers } from "../utils/storage";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -31,29 +31,54 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const success = await login(email, password);
-      if (success) {
-        setIsSuccess(true);
-        setTimeout(() => {
-          const savedUser = JSON.parse(
-            localStorage.getItem("currentUser") || "{}",
-          );
-          if (savedUser.role === "admin") {
-            navigate("/admin", { replace: true });
-          } else {
-            navigate("/staff", { replace: true });
-          }
-        }, 1200);
+      // Get latest users from storage
+      const allUsers = getUsers();
+
+      // Find user (HR added staff bhi isme aayega)
+      const foundUser = allUsers.find(
+        (u: any) =>
+          u.email.toLowerCase() === email.toLowerCase() &&
+          String(u.password) === String(password),
+      );
+
+      if (foundUser) {
+        console.log("✅ User Found:", foundUser);
+
+        // Call AuthContext login
+        const success = await login(email, password);
+
+        if (success) {
+          setIsSuccess(true);
+
+          setTimeout(() => {
+            const savedUser = JSON.parse(
+              localStorage.getItem("currentUser") || "{}",
+            );
+
+            // Role-based Navigation
+            if (savedUser.role === "admin") {
+              navigate("/admin", { replace: true });
+            } else if (savedUser.role === "hr") {
+              navigate("/hr", { replace: true });
+            } else {
+              navigate("/staff", { replace: true }); // Staff Dashboard
+            }
+          }, 1000);
+        }
       } else {
-        setError("Invalid credentials. Access Denied.");
+        setError(
+          "Invalid Email or Password. Please check credentials given by HR.",
+        );
       }
     } catch (err) {
-      setError("Authentication service unavailable.");
+      console.error("Login Error:", err);
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
+  // Demo Credentials Fill (unchanged)
   const fillCredentials = (role: string, typeName: string) => {
     setError("");
     setPortalType(typeName);
@@ -61,6 +86,9 @@ export default function Login() {
     if (role === "admin") {
       setEmail("admin@company.com");
       setPassword("admin123");
+    } else if (role === "hr") {
+      setEmail("hr@company.com");
+      setPassword("hr123");
     } else if (role === "elon") {
       setEmail("e@co.com");
       setPassword("123");
@@ -71,7 +99,6 @@ export default function Login() {
   };
 
   return (
-    // Background update: Added mesh gradient and animated pulse
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-sans relative overflow-hidden">
       {/* Dynamic Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -95,7 +122,7 @@ export default function Login() {
           </h1>
         </div>
 
-        {/* Card Container: Glassmorphism added */}
+        {/* Card Container */}
         <div className="bg-slate-900/40 backdrop-blur-2xl rounded-[3.5rem] shadow-[0_40px_100px_-15px_rgba(0,0,0,0.5)] border border-slate-700/50 p-10 md:p-12 relative overflow-hidden">
           <div className="text-center mb-10">
             <div
@@ -198,7 +225,7 @@ export default function Login() {
             <div className="grid grid-cols-2 gap-4">
               <button
                 type="button"
-                onClick={() => fillCredentials("admin", "Admin")}
+                onClick={() => fillCredentials("admin", "Administrator")}
                 className="col-span-2 flex items-center justify-between p-4 bg-slate-800/80 hover:bg-blue-600 rounded-2xl text-white group transition-all border border-slate-700"
               >
                 <div className="flex items-center gap-3">
@@ -208,6 +235,26 @@ export default function Login() {
                   />
                   <span className="text-[10px] font-black uppercase tracking-widest">
                     Administrator
+                  </span>
+                </div>
+                <ArrowRight
+                  size={16}
+                  className="opacity-40 group-hover:translate-x-1 group-hover:opacity-100 transition-all"
+                />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => fillCredentials("hr", "HR")}
+                className="col-span-2 flex items-center justify-between p-4 bg-slate-800/80 hover:bg-purple-600 rounded-2xl text-white group transition-all border border-slate-700"
+              >
+                <div className="flex items-center gap-3">
+                  <User
+                    size={18}
+                    className="text-purple-400 group-hover:text-white"
+                  />
+                  <span className="text-[10px] font-black uppercase tracking-widest">
+                    Human Resources
                   </span>
                 </div>
                 <ArrowRight

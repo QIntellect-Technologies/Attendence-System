@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Outlet, Link, useNavigate, useLocation } from "react-router";
+import { Outlet, useNavigate, useLocation ,Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import {
   LayoutDashboard,
@@ -50,8 +50,12 @@ export default function AdminLayout() {
     { name: "Live Scan Terminal", href: "/admin/live-marker", icon: Video },
     { name: "Reports & Analytics", href: "/admin/reports", icon: BarChart3 }, // New
     { name: "Live CCTV Tracking", href: "/admin/live-cctv", icon: MonitorPlay },
-  
-{ name: "Leave Management", href: "/admin/leave-requests", icon: CalendarDays },
+
+    {
+      name: "Leave Management",
+      href: "/admin/leave-requests",
+      icon: CalendarDays,
+    },
   ];
 
   const isActive = (path: string) => {
