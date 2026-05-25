@@ -85,8 +85,9 @@ def init_db():
         return False
 
 
-def add_user(name: str, email: str = None, phone: str = None, department: str = None) -> Optional[int]:
-    """Add a new user with validation."""
+def add_user(name: str, email: str = None, phone: str = None, department: str = None, **kwargs) -> Optional[int]:
+    """Add a new user with validation. Extra kwargs are ignored to prevent TypeErrors."""
+    notes = kwargs.get('notes')
     if not name or len(name.strip()) == 0:
         logger.warning("Attempted to add user with empty name")
         return None
@@ -95,8 +96,8 @@ def add_user(name: str, email: str = None, phone: str = None, department: str = 
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
             cursor.execute(
-                'INSERT INTO users (name, email, phone, department) VALUES (?, ?, ?, ?)',
-                (name.strip(), email, phone, department)
+                'INSERT INTO users (name, email, phone, department, notes) VALUES (?, ?, ?, ?, ?)',
+                (name.strip(), email, phone, department, notes)
             )
             conn.commit()
             user_id = cursor.lastrowid
@@ -123,6 +124,21 @@ def get_user_by_name(name: str) -> Optional[Dict]:
             return {'id': row[0], 'name': row[1], 'email': row[2]}
     except Exception as e:
         logger.error(f"Failed to fetch user by name: {e}")
+    return None
+
+
+def get_user_by_id(user_id: int) -> Optional[Dict]:
+    """Retrieve user by ID."""
+    try:
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT id, name, email, phone, department, active, notes, photo_path FROM users WHERE id = ?', (user_id,))
+            row = cursor.fetchone()
+            
+        if row:
+            return {'id': row[0], 'name': row[1], 'email': row[2], 'phone': row[3], 'department': row[4], 'active': row[5], 'notes': row[6], 'photo_path': row[7]}
+    except Exception as e:
+        logger.error(f"Failed to fetch user by ID: {e}")
     return None
 
 
