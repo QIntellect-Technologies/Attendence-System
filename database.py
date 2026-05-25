@@ -142,8 +142,8 @@ def get_user_by_id(user_id: int) -> Optional[Dict]:
     return None
 
 
-def get_all_users() -> List[Dict]:
-    """Get all active users with today's attendance status via optimized join."""
+def get_all_users(role: str = None, **kwargs) -> List[Dict]:
+    """Get all active users with today's attendance status via optimized join. Ignore role parameter if table doesn't support it."""
     try:
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
