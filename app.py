@@ -534,6 +534,7 @@ class CameraStreamReader:
         
         last_ai_time = 0
         ai_interval = TRACK_AI_INTERVAL
+        ai_interval_idle = 2.0  # Slower interval when no viewers (production autonomous mode)
         
         while self.running:
             current_time = time.time()
@@ -544,9 +545,13 @@ class CameraStreamReader:
                 if self.latest_frame is not None:
                     frame_to_process = self.latest_frame.copy()
             
-            # Only run AI if we have active viewers and a valid frame
-            if self.viewers_count > 0 and frame_to_process is not None:
-                if (current_time - last_ai_time) > ai_interval:
+            # ALWAYS run AI for autonomous attendance detection (production mode)
+            # When viewers are active: run at full speed (TRACK_AI_INTERVAL)
+            # When no viewers: run at slower rate (2s) to save CPU while still detecting
+            effective_interval = ai_interval if self.viewers_count > 0 else ai_interval_idle
+            
+            if frame_to_process is not None:
+                if (current_time - last_ai_time) > effective_interval:
                     last_ai_time = current_time
                     
                     try:
@@ -759,10 +764,8 @@ class CameraStreamReader:
                     except Exception as e:
                         logger.error(f"Background AI processing failed: {e}")
             else:
-                # Clear detections when no viewers are active
-                if len(self.latest_detections) > 0:
-                    with self.lock:
-                        self.latest_detections = []
+                # No frame available yet, wait briefly
+                pass
                 
             time.sleep(0.02)
 
