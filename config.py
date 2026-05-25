@@ -32,8 +32,8 @@ MIN_VIDEO_DURATION = 5  # Seconds
 MAX_VIDEO_DURATION = 300  # Seconds (5 minutes)
 
 # RTSP/Camera Settings
-NVR_OFFICE_URL = "rtsp://admin:admin1122@192.168.0.77:554/cam/realmonitor?channel=3&subtype=1"
-DVR_OFFICE_URL = "rtsp://admin:admin1122@192.168.0.77:554/cam/realmonitor?channel=2&subtype=1"
+NVR_OFFICE_URL = "rtsp://admin:admin1122@59.103.111.90:554/cam/realmonitor?channel=3&subtype=1"
+DVR_OFFICE_URL = "rtsp://admin:admin1122@59.103.111.90:554/cam/realmonitor?channel=2&subtype=1"
 RTSP_CONNECTION_TIMEOUT = 10  # Seconds
 RTSP_READ_TIMEOUT = 5  # Seconds
 RTSP_MAX_FRAMES_PER_STREAM = 500  # Safety limit
