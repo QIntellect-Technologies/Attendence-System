@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    libgl1-gl ibsm6 \
+    libgl1 libglib2.0-0 libsm6 libxext6 libxrender-dev \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -24,9 +24,7 @@ RUN mkdir -p logs uploads models
 # Expose port
 EXPOSE 5000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:5000/api/health')"
+# Health check disabled for Railway to handle port binding natively
 
 # Run application
 CMD ["python", "app.py"]
