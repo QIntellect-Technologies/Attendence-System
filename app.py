@@ -469,8 +469,7 @@ class CameraStreamReader:
         
         self.camera_id = camera_id
         self.rtsp_url = rtsp_url
-        self.cap = cv2.VideoCapture(rtsp_url, cv2.CAP_FFMPEG)
-        self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+        self.cap = None  # Initialized in the background thread to prevent blocking main startup
         
         self.latest_frame = None
         self.latest_detections = []
@@ -499,8 +498,10 @@ class CameraStreamReader:
         os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay"
         
         while self.running:
-            if not self.cap.isOpened():
+            if self.cap is None or not self.cap.isOpened():
                 os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay"
+                if self.cap is not None:
+                    self.cap.release()
                 self.cap = cv2.VideoCapture(self.rtsp_url, cv2.CAP_FFMPEG)
                 self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
                 time.sleep(1)
@@ -779,7 +780,8 @@ class CameraStreamReader:
         self.running = False
         self.grabber_thread.join(timeout=1.0)
         self.ai_thread.join(timeout=1.0)
-        self.cap.release()
+        if self.cap is not None:
+            self.cap.release()
 
 
 active_stream_readers = {}
