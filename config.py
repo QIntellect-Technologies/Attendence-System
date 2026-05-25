@@ -21,7 +21,7 @@ YOLO_MODEL = 'yolov8n.pt'  # Kept for reference, though no longer used for face 
 INSIGHTFACE_MODEL = 'buffalo_l'
 FACE_DETECTION_CONFIDENCE = 0.5
 FACE_MATCHING_THRESHOLD = 0.45  # Standard ArcFace cosine similarity threshold for robust matching
-FACE_QUALITY_THRESHOLD = 0.7  # Face quality score (0-1)
+FACE_QUALITY_THRESHOLD = 0.35  # Face quality score (0-1) - lowered for WhatsApp compressed videos
 MIN_EMBEDDINGS_PER_USER = 5  # Minimum embeddings for robust profile
 
 # Enrollment Settings
@@ -47,7 +47,7 @@ IMAGE_EXTENSIONS = {'jpg', 'jpeg', 'png', 'bmp', 'webp'}
 # Recognition Settings
 ATTENDANCE_LOG_RETENTION_DAYS = 365  # Keep 1 year of logs
 RECOGNITION_CONFIDENCE_THRESHOLD = 0.6  # Only log if above this
-ANTI_SPOOFING_ENABLED = True  # Enable spoof detection
+ANTI_SPOOFING_ENABLED = False  # Disabled for enrollment reliability (WhatsApp videos trigger false positives)
 DUPLICATE_LOG_TIMEOUT = 30  # Seconds - don't log same person twice
 
 # Tracking Settings
